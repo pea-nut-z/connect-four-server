@@ -49,11 +49,11 @@ server.on("connection", (socket) => {
   console.log({ connectionStatus });
 
   // update game
-  socket.on("update-game", ({ grid, result, warning, turn }) => {
+  socket.on("update-game", ({ grid, result, info, turn }) => {
     socket.broadcast.emit("update-game", {
       grid,
       result,
-      warning,
+      info,
       turn,
     });
   });
